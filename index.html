@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarg Softech | Engineering Digital Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-color: #030712;
+            --accent-glow: rgba(59, 130, 246, 0.15);
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+        .mesh-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 0% 0%, rgba(29, 78, 216, 0.15) 0%, transparent 35%),
+                radial-gradient(circle at 100% 100%, rgba(124, 58, 237, 0.1) 0%, transparent 35%);
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(59, 130, 246, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.5);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="mesh-gradient"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center bg-gray-900/40 backdrop-blur-md rounded-2xl border border-white/5 px-6 py-3">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/20">
+                    <span class="text-white font-bold text-lg">S</span>
+                </div>
+                <span class="text-xl font-bold tracking-tight">Sarg<span class="text-blue-500">Softech</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
+                <a href="#home" class="nav-link hover:text-white transition-colors">Home</a>
+                <a href="#expertise" class="nav-link hover:text-white transition-colors">Expertise</a>
+                <a href="#about" class="nav-link hover:text-white transition-colors">About</a>
+                <a href="https://sargsoftech.com/" target="_blank" class="nav-link hover:text-white transition-colors text-blue-400">Main Site</a>
+            </div>
+            <a href="mailto:info@sargsoftech.com" class="bg-blue-600 hover:bg-blue-500 text-white px-5 py-2 rounded-xl text-sm font-semibold transition-all shadow-lg shadow-blue-600/20 active:scale-95">
+                Contact
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 px-6 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+            <div class="reveal active">
+                <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 px-3 py-1 rounded-full text-blue-400 text-xs font-semibold mb-6 uppercase tracking-wider">
+                    <span class="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></span>
+                    Now Scaling Global Brands
+                </div>
+                <h1 class="text-6xl lg:text-7xl font-bold leading-tight mb-6">
+                    We Build <span class="text-gradient">Intelligent</span> Digital Products.
+                </h1>
+                <p class="text-xl text-gray-400 mb-10 max-w-lg leading-relaxed">
+                    Sarg Softech is a premium technology partner helping businesses innovate through high-end software development and human-centric design.
+                </p>
+                <div class="flex flex-wrap gap-5">
+                    <a href="https://sargsoftech.com/" target="_blank" class="px-8 py-4 bg-white text-gray-900 rounded-2xl font-bold text-lg hover:bg-blue-500 hover:text-white transition-all shadow-xl flex items-center gap-2 group">
+                        Get Started
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <div class="flex -space-x-3 items-center">
+                        <div class="w-10 h-10 rounded-full border-2 border-gray-900 bg-gray-800 flex items-center justify-center text-xs font-bold">JD</div>
+                        <div class="w-10 h-10 rounded-full border-2 border-gray-900 bg-gray-700 flex items-center justify-center text-xs font-bold">AK</div>
+                        <div class="w-10 h-10 rounded-full border-2 border-gray-900 bg-blue-600 flex items-center justify-center text-xs font-bold">50+</div>
+                        <span class="ml-4 text-sm text-gray-500 font-medium tracking-wide italic">Trusted by world-class teams</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative reveal active">
+                <!-- Abstract Hero Graphic -->
+                <div class="relative z-10 animate-float">
+                    <div class="glass-card rounded-[2.5rem] p-8 aspect-square flex flex-col justify-between overflow-hidden group">
+                        <div class="flex justify-between items-start">
+                            <div class="p-3 bg-blue-500/20 rounded-2xl border border-blue-500/30">
+                                <i data-lucide="cpu" class="w-8 h-8 text-blue-400"></i>
+                            </div>
+                            <div class="px-4 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-400 text-[10px] font-bold">SYSTEM ACTIVE</div>
+                        </div>
+                        <div>
+                            <h2 class="text-4xl font-bold mb-4">Scalable Architecture</h2>
+                            <div class="flex gap-2 mb-6">
+                                <span class="px-3 py-1 bg-white/5 rounded-lg text-xs">Node.js</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-lg text-xs">React</span>
+                                <span class="px-3 py-1 bg-white/5 rounded-lg text-xs">Cloud Native</span>
+                            </div>
+                            <div class="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-blue-500 w-3/4 rounded-full"></div>
+                            </div>
+                        </div>
+                        <!-- Background glow effect -->
+                        <div class="absolute -bottom-20 -right-20 w-64 h-64 bg-blue-600/20 blur-[100px] group-hover:bg-blue-600/40 transition-all"></div>
+                    </div>
+                </div>
+                <!-- Decorative Elements -->
+                <div class="absolute -top-10 -right-10 w-40 h-40 border border-white/5 rounded-full"></div>
+                <div class="absolute -bottom-10 -left-10 w-60 h-60 border border-white/5 rounded-full"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section (Bento Grid) -->
+    <section id="expertise" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 italic">Engineering <span class="text-blue-500">Future</span> Layers</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">We don't just write code; we architect experiences that define the digital landscape.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6">
+                <!-- Large Feature -->
+                <div class="md:col-span-2 md:row-span-2 glass-card rounded-3xl p-10 reveal">
+                    <div class="mb-8 p-4 bg-indigo-500/10 w-fit rounded-2xl">
+                        <i data-lucide="layout" class="w-10 h-10 text-indigo-400"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-4">Enterprise Web Systems</h3>
+                    <p class="text-gray-400 text-lg mb-6 leading-relaxed">We develop complex, high-traffic web applications that handle millions of requests with sub-second latency.</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm text-gray-300"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Custom ERP Solutions</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-300"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> SaaS Product Development</li>
+                        <li class="flex items-center gap-3 text-sm text-gray-300"><i data-lucide="check" class="w-4 h-4 text-blue-500"></i> Real-time Dashboards</li>
+                    </ul>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="md:col-span-2 glass-card rounded-3xl p-8 reveal">
+                    <div class="flex items-start gap-6">
+                        <div class="p-4 bg-blue-500/10 rounded-2xl shrink-0">
+                            <i data-lucide="smartphone" class="w-8 h-8 text-blue-400"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">Mobile Innovation</h3>
+                            <p class="text-gray-400">Building next-gen iOS and Android apps using Flutter and React Native for seamless performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card rounded-3xl p-8 reveal">
+                    <div class="mb-6 p-4 bg-purple-500/10 w-fit rounded-2xl">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-purple-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Cyber Security</h3>
+                    <p class="text-gray-400 text-sm">Military-grade encryption and security auditing for every line of code.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-card rounded-3xl p-8 reveal">
+                    <div class="mb-6 p-4 bg-orange-500/10 w-fit rounded-2xl">
+                        <i data-lucide="zap" class="w-8 h-8 text-orange-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Cloud Ops</h3>
+                    <p class="text-gray-400 text-sm">Automated CI/CD pipelines and infrastructure management via AWS/Azure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Marquee -->
+    <div class="py-12 bg-white/5 border-y border-white/5 overflow-hidden">
+        <div class="flex whitespace-nowrap animate-marquee items-center gap-20">
+            <span class="text-4xl font-bold text-white/20 uppercase tracking-widest italic">Innovation First</span>
+            <span class="text-4xl font-bold text-white/20 uppercase tracking-widest italic">Seamless Design</span>
+            <span class="text-4xl font-bold text-white/20 uppercase tracking-widest italic">Rapid Deployment</span>
+            <span class="text-4xl font-bold text-white/20 uppercase tracking-widest italic">Agile Methodology</span>
+            <span class="text-4xl font-bold text-white/20 uppercase tracking-widest italic">Digital Transformation</span>
+        </div>
+    </div>
+
+    <!-- Contact Banner -->
+    <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto glass-card rounded-[3rem] p-16 text-center relative overflow-hidden reveal">
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-600/20 blur-[80px]"></div>
+            <div class="relative z-10">
+                <h2 class="text-4xl md:text-5xl font-bold mb-8">Ready to evolve your <br/><span class="text-blue-500">digital presence?</span></h2>
+                <p class="text-gray-400 text-lg mb-10 max-w-lg mx-auto">Join the league of forward-thinking companies that choose Sarg Softech for their technical foundation.</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="mailto:info@sargsoftech.com" class="px-10 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-2xl font-bold transition-all shadow-lg shadow-blue-600/30">
+                        Drop us a message
+                    </a>
+                    <a href="https://sargsoftech.com/" target="_blank" class="px-10 py-4 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl font-bold transition-all">
+                        Visit Main Website
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">S</span>
+                    </div>
+                    <span class="text-xl font-bold">Sarg Softech</span>
+                </div>
+                <p class="text-gray-500 max-w-xs leading-relaxed">
+                    Engineering reliable software solutions for the next generation of digital businesses.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 text-white">Resources</h4>
+                <ul class="space-y-4 text-gray-500 text-sm">
+                    <li><a href="#" class="hover:text-blue-500 transition-colors">Documentation</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition-colors">Case Studies</a></li>
+                    <li><a href="#" class="hover:text-blue-500 transition-colors">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 text-white">Social</h4>
+                <div class="flex gap-4">
+                    <a href="#" class="p-2 bg-white/5 rounded-lg hover:bg-blue-600/20 transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="p-2 bg-white/5 rounded-lg hover:bg-blue-600/20 transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="p-2 bg-white/5 rounded-lg hover:bg-blue-600/20 transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-600">
+            <p>&copy; 2024 Sarg Softech. Engineered with precision.</p>
+            <div class="flex gap-8">
+                <span>Mumbai, India</span>
+                <span>London, UK</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Reveal animations on scroll
+        const reveal = () => {
+            const reveals = document.querySelectorAll('.reveal');
+            reveals.forEach(element => {
+                const windowHeight = window.innerHeight;
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', reveal);
+        window.addEventListener('load', reveal);
+
+        // Simple marquee animation
+        const style = document.createElement('style');
+        style.innerHTML = `
+            @keyframes marquee {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(-50%); }
+            }
+            .animate-marquee {
+                animation: marquee 30s linear infinite;
+                width: max-content;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Duplicate marquee content for seamless loop
+        const marquee = document.querySelector('.animate-marquee');
+        marquee.innerHTML += marquee.innerHTML;
+    </script>
+</body>
+</html>
